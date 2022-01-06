@@ -71,6 +71,7 @@ public class ProductServiceImpl implements ProductService {
         Optional < Product > productDb = this.productRepository.findById(productId);
 
         if (productDb.isPresent()) {
+        	
             this.productRepository.delete(productDb.get());
         } else {
             throw new com.springbootcrud.main.exception.ResourceNotFoundException("Record not found with id : " + productId);
